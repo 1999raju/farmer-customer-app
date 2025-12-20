@@ -1,0 +1,6 @@
+[
+{ "id": 1, "name": "Tomato", "price": 30, "category": "Vegetable" },
+{ "id": 2, "name": "Potato", "price": 25, "category": "Vegetable" },
+{ "id": 3, "name": "Apple", "price": 120, "category": "Fruit" },
+{ "id": 4, "name": "Banana", "price": 40, "category": "Fruit" }
+]

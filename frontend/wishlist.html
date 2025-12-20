@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wishlist</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h2>❤️ My Wishlist</h2>
+<div id="wishlist"></div>
+<script>
+const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+const div = document.getElementById('wishlist');
+
+
+if (wishlist.length === 0) {
+div.innerHTML = '<p>No items in wishlist</p>';
+}
+
+
+wishlist.forEach(item => {
+div.innerHTML += `<div class="card">
+<h3>${item.name}</h3>
+<p>₹${item.price} / KG</p>
+</div>`;
+});
+</script>
+</body>
+</html>
