@@ -10,7 +10,6 @@ products.forEach(p => {
 div.innerHTML += `
 <div class="card">
 <h3>${p.name}</h3>
-<p>₹${p.price} / 1 KG</p>
 <button onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
 </div>`;
 });
