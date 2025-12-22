@@ -1,24 +1,55 @@
-fetch('http://localhost:5000/products')
-.then(res => res.json())
-.then(data => displayProducts(data));
+const productsData = [
+  {
+    name: "Tomato",
+    type: "Vegetable",
+    price: 30,
+    image: "https://via.placeholder.com/200x120?text=Tomato"
+  },
+  {
+    name: "Potato",
+    type: "Vegetable",
+    price: 25,
+    image: "https://via.placeholder.com/200x120?text=Potato"
+  },
+  {
+    name: "Apple",
+    type: "Fruit",
+    price: 120,
+    image: "https://via.placeholder.com/200x120?text=Apple"
+  },
+  {
+    name: "Banana",
+    type: "Fruit",
+    price: 50,
+    image: "https://via.placeholder.com/200x120?text=Banana"
+  }
+];
 
+const productsDiv = document.getElementById("products");
 
-function displayProducts(products) {
-const div = document.getElementById('products');
-div.innerHTML = '';
-products.forEach(p => {
-div.innerHTML += `
-<div class="card">
-<h3>${p.name}</h3>
-<button onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
-</div>`;
-});
+function renderProducts(list) {
+  productsDiv.innerHTML = "";
+  list.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${p.image}">
+      <h3>${p.name}</h3>
+      <p>₹${p.price} / kg</p>
+      <button>Add to Cart</button>
+    `;
+
+    productsDiv.appendChild(card);
+  });
 }
 
-
-function addToCart(name, price) {
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-cart.push({ name, price, qty: 1 });
-localStorage.setItem('cart', JSON.stringify(cart));
-alert('Added to cart');
+function filterProducts(type) {
+  if (type === "All") {
+    renderProducts(productsData);
+  } else {
+    renderProducts(productsData.filter(p => p.type === type));
+  }
 }
+
+renderProducts(productsData);
