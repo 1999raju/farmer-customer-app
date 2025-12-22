@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Farmer Market</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Farmer Direct Market</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1> Farmer Direct Market </h1>
-<select id="filter">
-<option value="All">All</option>
-<option value="Vegetable">Vegetables</option>
-<option value="Fruit">Fruits</option>
-</select>
-<div id="products"></div>
+
+<!-- HEADER -->
+<header class="navbar">
+  <h2>🥕 Farmer Direct Market</h2>
+  <input type="text" id="search" placeholder="Search vegetables & fruits">
+  <div class="cart">🛒 Cart</div>
+</header>
+
+<!-- CATEGORY FILTER -->
+<div class="filter">
+  <button onclick="filterProducts('All')">All</button>
+  <button onclick="filterProducts('Vegetable')">Vegetables</button>
+  <button onclick="filterProducts('Fruit')">Fruits</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products" id="products"></div>
+
 <script src="js/app.js"></script>
 </body>
 </html>
