@@ -1,10 +1,11 @@
-FROM nginx:alpine
+FROM node:18-alpine
 
-# Remove default nginx files
-RUN rm -rf /usr/share/nginx/html/*
+WORKDIR /app
 
-# Copy JSON files
-COPY data /usr/share/nginx/html
+COPY package*.json ./
+RUN npm install
 
-# Expose port
-EXPOSE 80
+COPY . .
+
+EXPOSE 5000
+CMD ["node", "server.js"]
