@@ -3,4 +3,12 @@
 { "id": 2, "name": "Potato", "price": 25, "category": "Vegetable" },
 { "id": 3, "name": "Apple", "price": 120, "category": "Fruit" },
 { "id": 4, "name": "Banana", "price": 40, "category": "Fruit" }
+{ "id": 1, "name": "mirchi", "price": 30, "category": "Vegetable" },
+{ "id": 2, "name": "vankaya", "price": 25, "category": "Vegetable" },
+{ "id": 3, "name": "cherries", "price": 120, "category": "Fruit" },
+{ "id": 4, "name": "Battayeeeeee", "price": 40, "category": "Fruit" }
+{ "id": 1, "name": "nimmakayalu", "price": 30, "category": "Vegetable" },
+{ "id": 2, "name": "bendakayalu", "price": 25, "category": "Vegetable" },
+{ "id": 3, "name": "jaama", "price": 120, "category": "Fruit" },
+{ "id": 4, "name": "chintakayalu", "price": 40, "category": "Fruit" }
 ]
