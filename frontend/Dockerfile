@@ -1,18 +1,9 @@
-FROM node:18-alpine
+FROM nginx:alpine
 
-WORKDIR /app
+# Remove default nginx content
+RUN rm -rf /usr/share/nginx/html/*
 
-# Copy package files
-# COPY package*.json ./
+# Copy frontend files
+COPY . /usr/share/nginx/html
 
-# Install dependencies
-RUN npm install
-
-# Copy all backend files
-COPY . .
-
-# Expose backend port
-EXPOSE 5000
-
-# Start backend
-CMD ["node", "server.js"]
+EXPOSE 80
