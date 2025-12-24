@@ -1,8 +1,10 @@
+// frontend/js/app.js
 const productsDiv = document.getElementById("products");
 
 async function fetchProducts() {
   try {
-    const res = await fetch("http://backend:5000/products");
+    // Use container name instead of localhost
+    const res = await fetch("http://farmer-backend:5000/products");
     const products = await res.json();
     window.allProducts = products;
     renderProducts(products);
