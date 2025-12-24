@@ -1,216 +1,64 @@
-const productsData = [
+document.addEventListener("DOMContentLoaded", () => {
 
-  // 🥬 VEGETABLES (30)
-  {
-    name: "Tomato",
-    type: "Vegetable",
-    price: 30,
-    image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg"
-  },
-  {
-    name: "Potato",
-    type: "Vegetable",
-    price: 25,
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Patates.jpg"
-  },
-  {
-    name: "Onion",
-    type: "Vegetable",
-    price: 35,
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Onions.jpg"
-  },
-  {
-    name: "Brinjal",
-    type: "Vegetable",
-    price: 40,
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Eggplant.jpg"
-  },
-  {
-    name: "Lady Finger (Okra)",
-    type: "Vegetable",
-    price: 45,
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Okra_pods.jpg"
-  },
-  {
-    name: "Green Chilli",
-    type: "Vegetable",
-    price: 60,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Green_chillies.jpg"
-  },
-  {
-    name: "Cabbage",
-    type: "Vegetable",
-    price: 28,
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Cabbage_and_cross_section_on_white.jpg"
-  },
-  {
-    name: "Cauliflower",
-    type: "Vegetable",
-    price: 35,
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/25/Cauliflower.jpg"
-  },
-  {
-    name: "Carrot",
-    type: "Vegetable",
-    price: 50,
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Carrots.jpg"
-  },
-  {
-    name: "Beetroot",
-    type: "Vegetable",
-    price: 45,
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Beetroot_jm26647.jpg"
-  },
+  window.productsData = [
+    // 🥬 VEGETABLES (30)
+    { name: "Tomato", type: "Vegetable", price: 30, image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg" },
+    { name: "Potato", type: "Vegetable", price: 25, image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Patates.jpg" },
+    { name: "Onion", type: "Vegetable", price: 35, image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Onions.jpg" },
+    { name: "Brinjal", type: "Vegetable", price: 40, image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Eggplant.jpg" },
+    { name: "Lady Finger (Okra)", type: "Vegetable", price: 45, image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Okra_pods.jpg" },
+    { name: "Green Chilli", type: "Vegetable", price: 60, image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Green_chillies.jpg" },
+    { name: "Cabbage", type: "Vegetable", price: 28, image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Cabbage_and_cross_section_on_white.jpg" },
+    { name: "Cauliflower", type: "Vegetable", price: 35, image: "https://upload.wikimedia.org/wikipedia/commons/2/25/Cauliflower.jpg" },
+    { name: "Carrot", type: "Vegetable", price: 50, image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Carrots.jpg" },
+    { name: "Beetroot", type: "Vegetable", price: 45, image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Beetroot_jm26647.jpg" },
+    { name: "Drumstick", type: "Vegetable", price: 70, image: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Moringa_pods.jpg" },
+    { name: "Bottle Gourd", type: "Vegetable", price: 30, image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Bottle_gourds.jpg" },
+    { name: "Ridge Gourd", type: "Vegetable", price: 35, image: "https://upload.wikimedia.org/wikipedia/commons/6/64/Ridge_gourd.jpg" },
+    { name: "Bitter Gourd", type: "Vegetable", price: 55, image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Bitter_gourd.jpg" },
+    { name: "Cluster Beans", type: "Vegetable", price: 60, image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Guar_beans.jpg" },
+    { name: "Spinach", type: "Vegetable", price: 20, image: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Spinach_leaves.jpg" },
+    { name: "Coriander", type: "Vegetable", price: 15, image: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coriander_leaves.jpg" },
+    { name: "Pumpkin", type: "Vegetable", price: 30, image: "https://upload.wikimedia.org/wikipedia/commons/9/96/Pumpkins.jpg" },
+    { name: "Capsicum", type: "Vegetable", price: 55, image: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bell_peppers.jpg" },
+    { name: "Sweet Corn", type: "Vegetable", price: 40, image: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Corncobs.jpg" },
 
-  {
-    name: "Drumstick",
-    type: "Vegetable",
-    price: 70,
-    image: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Moringa_pods.jpg"
-  },
-  {
-    name: "Bottle Gourd",
-    type: "Vegetable",
-    price: 30,
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Bottle_gourds.jpg"
-  },
-  {
-    name: "Ridge Gourd",
-    type: "Vegetable",
-    price: 35,
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/64/Ridge_gourd.jpg"
-  },
-  {
-    name: "Bitter Gourd",
-    type: "Vegetable",
-    price: 55,
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Bitter_gourd.jpg"
-  },
-  {
-    name: "Cluster Beans",
-    type: "Vegetable",
-    price: 60,
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Guar_beans.jpg"
-  },
-  {
-    name: "Spinach",
-    type: "Vegetable",
-    price: 20,
-    image: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Spinach_leaves.jpg"
-  },
-  {
-    name: "Coriander",
-    type: "Vegetable",
-    price: 15,
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coriander_leaves.jpg"
-  },
-  {
-    name: "Pumpkin",
-    type: "Vegetable",
-    price: 30,
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/96/Pumpkins.jpg"
-  },
-  {
-    name: "Capsicum",
-    type: "Vegetable",
-    price: 55,
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bell_peppers.jpg"
-  },
-  {
-    name: "Sweet Corn",
-    type: "Vegetable",
-    price: 40,
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Corncobs.jpg"
-  },
+    // 🍎 FRUITS (20)
+    { name: "Apple", type: "Fruit", price: 120, image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" },
+    { name: "Banana", type: "Fruit", price: 50, image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg" },
+    { name: "Mango", type: "Fruit", price: 90, image: "https://upload.wikimedia.org/wikipedia/commons/9/90/Hapus_Mango.jpg" },
+    { name: "Orange", type: "Fruit", price: 60, image: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg" },
+    { name: "Papaya", type: "Fruit", price: 40, image: "https://upload.wikimedia.org/wikipedia/commons/0/09/Papaya_cross_section.jpg" },
+    { name: "Guava", type: "Fruit", price: 55, image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Guava_ID.jpg" },
+    { name: "Watermelon", type: "Fruit", price: 25, image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Watermelon_cross_BNC.jpg" },
+    { name: "Pomegranate", type: "Fruit", price: 110, image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Pomegranatefruit.jpg" },
+    { name: "Grapes", type: "Fruit", price: 75, image: "https://upload.wikimedia.org/wikipedia/commons/1/12/Table_grapes_on_white.jpg" },
+    { name: "Pineapple", type: "Fruit", price: 80, image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Pineapple_and_cross_section.jpg" }
+  ];
 
-  // 🍎 FRUITS (20)
-  {
-    name: "Apple",
-    type: "Fruit",
-    price: 120,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg"
-  },
-  {
-    name: "Banana",
-    type: "Fruit",
-    price: 50,
-    image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg"
-  },
-  {
-    name: "Mango",
-    type: "Fruit",
-    price: 90,
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/90/Hapus_Mango.jpg"
-  },
-  {
-    name: "Orange",
-    type: "Fruit",
-    price: 60,
-    image: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg"
-  },
-  {
-    name: "Papaya",
-    type: "Fruit",
-    price: 40,
-    image: "https://upload.wikimedia.org/wikipedia/commons/0/09/Papaya_cross_section.jpg"
-  },
-  {
-    name: "Guava",
-    type: "Fruit",
-    price: 55,
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Guava_ID.jpg"
-  },
-  {
-    name: "Watermelon",
-    type: "Fruit",
-    price: 25,
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Watermelon_cross_BNC.jpg"
-  },
-  {
-    name: "Pomegranate",
-    type: "Fruit",
-    price: 110,
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Pomegranatefruit.jpg"
-  },
-  {
-    name: "Grapes",
-    type: "Fruit",
-    price: 75,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/12/Table_grapes_on_white.jpg"
-  },
-  {
-    name: "Pineapple",
-    type: "Fruit",
-    price: 80,
-    image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Pineapple_and_cross_section.jpg"
+  const productsDiv = document.getElementById("products");
+
+  function renderProducts(list) {
+    productsDiv.innerHTML = "";
+    list.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="${p.image}">
+        <h3>${p.name}</h3>
+        <p>₹${p.price} / kg</p>
+        <button onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
+      `;
+
+      productsDiv.appendChild(card);
+    });
   }
-];
 
-const productsDiv = document.getElementById("products");
+  window.filterProducts = function(type) {
+    if(type === "All") renderProducts(productsData);
+    else renderProducts(productsData.filter(p => p.type === type));
+  };
 
-function renderProducts(list) {
-  productsDiv.innerHTML = "";
-  list.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <img src="${p.image}">
-      <h3>${p.name}</h3>
-      <p>₹${p.price} / kg</p>
-      <button>Add to Cart</button>
-    `;
-
-    productsDiv.appendChild(card);
-  });
-}
-
-function filterProducts(type) {
-  if (type === "All") {
-    renderProducts(productsData);
-  } else {
-    renderProducts(productsData.filter(p => p.type === type));
-  }
-}
-
-renderProducts(productsData);
+  renderProducts(productsData);
+});
