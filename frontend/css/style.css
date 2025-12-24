@@ -4,10 +4,8 @@ body {
   background: #f5f5f5;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   background: #0a8f08;
   color: white;
@@ -26,7 +24,6 @@ body {
   cursor: pointer;
 }
 
-/* Filter */
 .filter {
   display: flex;
   justify-content: center;
@@ -43,15 +40,13 @@ body {
   cursor: pointer;
 }
 
-/* Products Grid */
-#products {
+.products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
-/* Product Card */
 .card {
   background: white;
   border-radius: 10px;
