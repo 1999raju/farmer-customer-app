@@ -28,4 +28,6 @@ app.post('/orders', (req, res) => {
   res.json({ message: 'Order placed successfully' });
 });
 
-app.listen(5000, () => console.log('Backend running on port 5000'));
+app.listen(5000, "0.0.0.0", () => {
+  console.log("Backend running on port 5000");
+});
