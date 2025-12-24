@@ -1,11 +1,10 @@
 const productsDiv = document.getElementById("products");
 
-// Fetch products from backend
 async function fetchProducts() {
   try {
-    const res = await fetch("http://localhost:5000/products"); // backend API
+    const res = await fetch("http://backend:5000/products");
     const products = await res.json();
-    window.allProducts = products; // store globally
+    window.allProducts = products;
     renderProducts(products);
   } catch (err) {
     console.error("Error fetching products:", err);
@@ -13,7 +12,6 @@ async function fetchProducts() {
   }
 }
 
-// Render products dynamically
 function renderProducts(list) {
   productsDiv.innerHTML = "";
   list.forEach(p => {
@@ -29,17 +27,14 @@ function renderProducts(list) {
   });
 }
 
-// Filter products by type
 function filterProducts(type) {
   if (!window.allProducts) return;
   if (type === "All") renderProducts(window.allProducts);
   else renderProducts(window.allProducts.filter(p => p.type === type));
 }
 
-// Simple add to cart alert
 function addToCart(name, price) {
   alert(`${name} added to cart at ₹${price}/kg`);
 }
 
-// Initial load
 fetchProducts();
