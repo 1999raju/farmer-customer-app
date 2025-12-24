@@ -8,23 +8,19 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Paths to JSON files
 const productsFile = path.join(__dirname, 'data/products.json');
 const ordersFile = path.join(__dirname, 'data/orders.json');
 
-// GET all products
 app.get('/products', (req, res) => {
   const products = JSON.parse(fs.readFileSync(productsFile));
   res.json(products);
 });
 
-// GET all orders
 app.get('/orders', (req, res) => {
   const orders = JSON.parse(fs.readFileSync(ordersFile));
   res.json(orders);
 });
 
-// POST a new order
 app.post('/orders', (req, res) => {
   const orders = JSON.parse(fs.readFileSync(ordersFile));
   orders.push(req.body);
