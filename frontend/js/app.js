@@ -2,7 +2,7 @@ const productsDiv = document.getElementById("products");
 
 async function fetchProducts() {
   try {
-    const res = await fetch("http://3.101.33.127:5000/products");
+    const res = await fetch("http://54.183.117.17:5000/products");
     const products = await res.json();
     renderProducts(products);
   } catch (err) {
