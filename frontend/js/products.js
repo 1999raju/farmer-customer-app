@@ -1,26 +1,40 @@
-const productDiv = document.getElementById("product");
-const product = JSON.parse(localStorage.getItem("selectedProduct"));
+const API_URL = "http://localhost:5000/api/products"; // Use localhost, NOT 'backend'
+let allProducts = [];
 
-if (!product) {
-  productDiv.innerHTML = "<p>No product selected</p>";
-} else {
-  productDiv.innerHTML = `
-    <img src="${product.image}">
-    <h2>${product.name}</h2>
-    <p>Price: ₹${product.price} / kg</p>
-
-    <button onclick="addToCart()">Add to Cart</button>
-    <button onclick="buyNow()">Buy Now</button>
-  `;
+async function fetchProducts() {
+    try {
+        const response = await fetch(API_URL);
+        allProducts = await response.json();
+        displayProducts(allProducts);
+    } catch (err) {
+        console.error("Failed to fetch products:", err);
+    }
 }
 
-function addToCart() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push(product);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Added to cart");
+function displayProducts(products) {
+    const container = document.getElementById("product-list");
+    container.innerHTML = products.map(p => `
+        <div class="product-card">
+            <img src="${p.image}" width="100">
+            <h3>${p.name}</h3>
+            <p>₹${p.price}</p>
+            <button onclick="viewProduct(${p.id})">View Details</button>
+        </div>
+    `).join('');
 }
 
-function buyNow() {
-  alert("Order placed for " + product.name);
+// Search Functionality
+function searchProducts() {
+    const term = document.getElementById("searchBar").value.toLowerCase();
+    const filtered = allProducts.filter(p => p.name.toLowerCase().includes(term));
+    displayProducts(filtered);
 }
+
+// Save to localStorage for individual page
+function viewProduct(id) {
+    const selected = allProducts.find(p => p.id === id);
+    localStorage.setItem("selectedProduct", JSON.stringify(selected));
+    window.location.href = "products.html";
+}
+
+fetchProducts();
