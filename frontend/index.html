@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmer Market 2026</title>
+    <title>Farmer Market</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Optional: Include a CSS framework like Bootstrap for easier styling -->
 </head>
 <body>
-
-    <!-- Navigation Header -->
-    <header>
+    <header class="navbar">
+        <div class="logo">Farmer Market</div>
         <nav>
-            <div class="logo">Farmer Market</div>
-            <ul class="nav-links">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="wishlist.html">Wishlist</a></li>
                 <li><a href="cart.html">Cart</a></li>
@@ -21,20 +20,18 @@
         </nav>
     </header>
 
-    <!-- Search Section -->
-    <section class="search-container">
+    <main class="container">
         <h1>Fresh Farm Products</h1>
-        <input type="text" id="searchBar" onkeyup="searchProducts()" placeholder="Search for vegetables, fruits...">
-    </section>
-
-    <!-- Product Display Grid -->
-    <main>
-        <div id="product-list" class="product-grid">
-            <!-- Products will be injected here by products.js -->
+        <div class="search-container">
+            <input type="text" id="searchBar" onkeyup="searchProducts()" placeholder="Search for vegetables, fruits...">
+        </div>
+        
+        <!-- This is where the products will be injected by JavaScript -->
+        <div class="product-grid" id="product-list">
+            <!-- Product cards will go here -->
         </div>
     </main>
 
-    <!-- Scripts -->
     <script src="js/products.js"></script>
 </body>
 </html>
