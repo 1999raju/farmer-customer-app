@@ -1,16 +1,21 @@
-const API_URL = "http://backend:5000/api/products"; 
+const API_URL = "http://54.183.117.17:5000/products";
 
 let allProducts = [];
 
-// ... (fetchProducts, searchProducts, displayProducts functions from previous response)
-// Make sure to use the displayProducts and searchProducts functions provided in the prior response.
+async function fetchProducts() {
+    try {
+        const response = await fetch(API_URL);
+        allProducts = await response.json();
+        displayProducts(allProducts);
+    } catch (err) {
+        console.error("Error fetching products:", err);
+    }
+}
 
-// Function to handle clicking a product to view details
 function viewProduct(id) {
     const selected = allProducts.find(p => p.id === id);
-    // Saves data to local storage before navigating
-    localStorage.setItem("selectedProduct", JSON.stringify(selected)); 
-    window.location.href = "products.html"; // Navigate to the details page
+    localStorage.setItem("selectedProduct", JSON.stringify(selected));
+    window.location.href = "products.html";
 }
 
 fetchProducts();
