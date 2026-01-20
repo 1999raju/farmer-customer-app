@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Farmer Market</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Market 2026</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="navbar">
-  <h2>🥕 Farmer Market</h2>
-  <input type="text" id="search" placeholder="Search vegetables & fruits">
-  <div class="cart">🛒 Cart</div>
-</header>
 
-<div class="filter">
-  <button onclick="filterProducts('All')">All</button>
-  <button onclick="filterProducts('Vegetable')">Vegetables</button>
-  <button onclick="filterProducts('Fruit')">Fruits</button>
-</div>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">Farmer Market</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="products" id="products"></div>
+    <!-- Search Section -->
+    <section class="search-container">
+        <h1>Fresh Farm Products</h1>
+        <input type="text" id="searchBar" onkeyup="searchProducts()" placeholder="Search for vegetables, fruits...">
+    </section>
 
-<script src="js/app.js"></script>
+    <!-- Product Display Grid -->
+    <main>
+        <div id="product-list" class="product-grid">
+            <!-- Products will be injected here by products.js -->
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
 </body>
 </html>
