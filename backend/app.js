@@ -1,15 +1,26 @@
-const express = require('express');
-const cors = require('cors');
-const fs = require('fs');
+const express = require("express");
+const cors = require("cors");
+
 const app = express();
 
-app.use(cors()); // Critical: Allows frontend access
+app.use(cors());
 app.use(express.json());
 
-// API to get all products
-app.get('/api/products', (req, res) => {
-    const data = JSON.parse(fs.readFileSync('./data/products.json', 'utf8'));
-    res.json(data);
+/* TEST route */
+app.get("/", (req, res) => {
+  res.send("Backend is running");
 });
 
-app.listen(5000, () => console.log('Backend running on port 5000'));
+/* PRODUCTS API */
+app.get("/products", (req, res) => {
+  res.json([
+    { id: 1, name: "Tomato", price: 20 },
+    { id: 2, name: "Potato", price: 15 },
+    { id: 3, name: "Onion", price: 25 }
+  ]);
+});
+
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
