@@ -1,4 +1,5 @@
-const API_URL = "http://localhost:5000/api/products"; 
+const API_URL = "http://backend:5000/api/products"; 
+
 let allProducts = [];
 
 // ... (fetchProducts, searchProducts, displayProducts functions from previous response)
