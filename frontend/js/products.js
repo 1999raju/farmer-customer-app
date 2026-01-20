@@ -1,21 +1,21 @@
-const API_URL = "http://54.183.117.17:5000/products";
+function displayProducts(products) {
+    const container = document.getElementById("products");
 
-let allProducts = [];
-
-async function fetchProducts() {
-    try {
-        const response = await fetch(API_URL);
-        allProducts = await response.json();
-        displayProducts(allProducts);
-    } catch (err) {
-        console.error("Error fetching products:", err);
+    if (!container) {
+        console.error("Products container not found");
+        return;
     }
-}
 
-function viewProduct(id) {
-    const selected = allProducts.find(p => p.id === id);
-    localStorage.setItem("selectedProduct", JSON.stringify(selected));
-    window.location.href = "products.html";
-}
+    container.innerHTML = "";
 
-fetchProducts();
+    products.forEach(product => {
+        const div = document.createElement("div");
+        div.className = "product-card";
+        div.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>Price: ₹${product.price}</p>
+            <button onclick="viewProduct(${product.id})">View</button>
+        `;
+        container.appendChild(div);
+    });
+}
