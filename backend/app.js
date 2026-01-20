@@ -1,33 +1,15 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const fs = require('fs');
-const path = require('path');
-
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
 
-const productsFile = path.join(__dirname, 'data/products.json');
-const ordersFile = path.join(__dirname, 'data/orders.json');
+app.use(cors()); // Critical: Allows frontend access
+app.use(express.json());
 
-app.get('/products', (req, res) => {
-  const products = JSON.parse(fs.readFileSync(productsFile));
-  res.json(products);
+// API to get all products
+app.get('/api/products', (req, res) => {
+    const data = JSON.parse(fs.readFileSync('./data/products.json', 'utf8'));
+    res.json(data);
 });
 
-app.get('/orders', (req, res) => {
-  const orders = JSON.parse(fs.readFileSync(ordersFile));
-  res.json(orders);
-});
-
-app.post('/orders', (req, res) => {
-  const orders = JSON.parse(fs.readFileSync(ordersFile));
-  orders.push(req.body);
-  fs.writeFileSync(ordersFile, JSON.stringify(orders, null, 2));
-  res.json({ message: 'Order placed successfully' });
-});
-
-app.listen(5000, "0.0.0.0", () => {
-  console.log("Backend running on port 5000");
-});
+app.listen(5000, () => console.log('Backend running on port 5000'));
