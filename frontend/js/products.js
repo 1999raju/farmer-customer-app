@@ -1,4 +1,4 @@
-const API_URL = "http://54.183.117.17:5000/products";
+const API_URL = "http://54.176.136.88:5000/products";
 
 let allProducts = [];
 
